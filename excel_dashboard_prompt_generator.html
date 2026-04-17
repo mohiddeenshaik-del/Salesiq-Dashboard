@@ -1,0 +1,209 @@
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Sora:wght@400;500;600&display=swap');
+  *{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --ink:#0f0f0f;--ink2:#444;--ink3:#888;
+    --surface:#f9f8f6;--surface2:#f0ede8;--surface3:#e8e3db;
+    --accent:#c0392b;--accent2:#e74c3c;--gold:#b8860b;
+    --border:#d4cfc8;--mono:'JetBrains Mono',monospace;--sans:'Sora',sans-serif;
+  }
+  body{font-family:var(--sans);background:transparent;color:var(--ink);padding:0}
+  .shell{border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--surface)}
+  .topbar{background:#1a1a1a;padding:14px 20px;display:flex;align-items:center;gap:10px}
+  .dots span{width:11px;height:11px;border-radius:50%;display:inline-block;margin-right:5px}
+  .d1{background:#ff5f57}.d2{background:#febc2e}.d3{background:#28c840}
+  .topbar-title{flex:1;text-align:center;font-size:11px;color:#888;font-family:var(--mono);letter-spacing:.08em}
+  .badge-row{display:flex;gap:8px;padding:14px 20px;background:#111;flex-wrap:wrap}
+  .badge{font-size:10px;font-family:var(--mono);padding:3px 9px;border-radius:4px;letter-spacing:.06em;font-weight:600}
+  .b-red{background:#3d1010;color:#ff9090;border:1px solid #6d2020}
+  .b-gold{background:#2d2300;color:#ffd060;border:1px solid #5a4200}
+  .b-teal{background:#0a2d25;color:#4dffc0;border:1px solid #1a6048}
+  .b-blue{background:#0a1b35;color:#60b0ff;border:1px solid #1a4080}
+  .b-purple{background:#1e0d35;color:#c090ff;border:1px solid #4a2080}
+  .prompt-body{padding:24px 24px 20px;background:#0d0d0d}
+  .section{margin-bottom:24px}
+  .sec-label{font-family:var(--mono);font-size:10px;color:#555;letter-spacing:.15em;text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+  .sec-label::after{content:'';flex:1;height:1px;background:#222}
+  .line{font-family:var(--mono);font-size:13px;line-height:1.9;color:#c8c0b0}
+  .kw{color:#ff7070;font-weight:600}
+  .val{color:#ffd060}
+  .str{color:#a8e6a0}
+  .cmt{color:#555;font-style:italic}
+  .directive{color:#80c8ff}
+  .em{color:#c090ff;font-weight:600}
+  .accent-block{border-left:3px solid var(--accent);padding-left:14px;margin:12px 0}
+  .copy-btn{font-family:var(--mono);font-size:11px;padding:8px 16px;background:transparent;border:1px solid #444;color:#888;border-radius:6px;cursor:pointer;transition:all .2s;letter-spacing:.05em}
+  .copy-btn:hover{border-color:#c0392b;color:#ff9090}
+  .copy-btn.copied{border-color:#28c840;color:#60ff80}
+  .footer-bar{background:#111;padding:12px 20px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid #1e1e1e}
+  .stat{font-family:var(--mono);font-size:10px;color:#555}
+  .stat span{color:#888}
+  .prompt-full{display:none}
+</style>
+
+<div class="shell">
+  <div class="topbar">
+    <div class="dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
+    <div class="topbar-title">MASTER DASHBOARD PROMPT · TOP 0.01% PROMPT ENGINEERING</div>
+  </div>
+  <div class="badge-row">
+    <span class="badge b-red">ROLE-INJECTED</span>
+    <span class="badge b-gold">CHAIN-OF-THOUGHT</span>
+    <span class="badge b-teal">CONSTRAINT-LOCKED</span>
+    <span class="badge b-blue">OUTPUT-SPECIFIED</span>
+    <span class="badge b-purple">ITERATIVE-READY</span>
+  </div>
+  <div class="prompt-body">
+
+    <div class="section">
+      <div class="sec-label">01 · ROLE + CONTEXT INJECTION</div>
+      <div class="line"><span class="kw">You are</span> a <span class="val">Principal Data Visualization Engineer</span> and <span class="val">Senior UX Designer</span> with <span class="val">15+ years</span> of experience building enterprise-grade analytical dashboards for <span class="str">Fortune 500 companies</span>. You have deep expertise in <span class="directive">data storytelling</span>, <span class="directive">KPI architecture</span>, <span class="directive">visual hierarchy</span>, and <span class="directive">information design principles</span>. Your dashboards have been featured in <span class="str">Harvard Business Review</span> and are used by C-suite executives worldwide.</div>
+    </div>
+
+    <div class="section">
+      <div class="sec-label">02 · TASK DEFINITION WITH CHAIN-OF-THOUGHT</div>
+      <div class="accent-block">
+        <div class="line"><span class="kw">TASK:</span> Analyze the uploaded Excel dataset and build a <span class="em">production-grade interactive dashboard</span> as a single self-contained HTML file.</div>
+        <div class="line" style="margin-top:10px"><span class="cmt">// Think step by step — follow this reasoning chain before writing any code:</span></div>
+        <div class="line"><span class="kw">STEP 1 →</span> <span class="directive">DATA AUDIT</span>: Identify all columns, data types, date ranges, numeric ranges, null patterns, and outliers. State what story the data is trying to tell.</div>
+        <div class="line"><span class="kw">STEP 2 →</span> <span class="directive">KPI EXTRACTION</span>: Decide which 4–6 headline KPIs matter most to a decision-maker. Every KPI must have a value, trend indicator (▲▼), and delta vs prior period.</div>
+        <div class="line"><span class="kw">STEP 3 →</span> <span class="directive">VISUAL SELECTION</span>: For each insight, choose the optimal chart type (bar, line, donut, scatter, heatmap, funnel, etc.) with explicit reasoning. Never default to bar charts without justification.</div>
+        <div class="line"><span class="kw">STEP 4 →</span> <span class="directive">LAYOUT ARCHITECTURE</span>: Design a dashboard grid. Top row = KPI cards. Middle = primary charts (2-col). Bottom = supporting charts + table. Use a sidebar for filters if applicable.</div>
+        <div class="line"><span class="kw">STEP 5 →</span> <span class="directive">BUILD</span>: Write the complete HTML/CSS/JS code. Embed all data as JS variables. Use Chart.js from CDN.</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="sec-label">03 · HARD DESIGN CONSTRAINTS</div>
+      <div class="line"><span class="kw">COLOR SYSTEM:</span> Use a <span class="val">professional dark theme</span>. Background <span class="str">#0F1117</span>, cards <span class="str">#1A1D2E</span>, primary accent <span class="str">#6C63FF</span>, secondary <span class="str">#00D4AA</span>, danger <span class="str">#FF4757</span>, warning <span class="str">#FFA502</span>. All text must pass <span class="directive">WCAG AA contrast</span>.</div>
+      <div class="line"><span class="kw">TYPOGRAPHY:</span> Import <span class="str">Inter</span> from Google Fonts. Headers 600 weight. KPI numbers 700 weight at 2rem+. Labels 400 weight at 12px. No system fonts.</div>
+      <div class="line"><span class="kw">INTERACTIVITY REQUIRED:</span> <span class="directive">(a)</span> Date range filter, <span class="directive">(b)</span> Category dropdown filter, <span class="directive">(c)</span> All charts must respond to filter changes with smooth <span class="val">300ms</span> transitions, <span class="directive">(d)</span> Hover tooltips on all charts with formatted values, <span class="directive">(e)</span> Click-to-highlight cross-chart filtering where logical.</div>
+      <div class="line"><span class="kw">KPI CARDS:</span> Each card must have: metric name · current value (formatted) · sparkline · % change badge (color-coded green/red) · comparison label (vs last period).</div>
+      <div class="line"><span class="kw">RESPONSIVENESS:</span> CSS Grid with <span class="str">minmax()</span>. Must render cleanly at <span class="val">1280px, 1440px, 1920px</span>. Mobile graceful degradation.</div>
+      <div class="line"><span class="kw">DATA FORMATTING:</span> Numbers with locale commas, currency with symbols, percentages with 1 decimal, dates in human-readable format. Zero hardcoded display strings.</div>
+    </div>
+
+    <div class="section">
+      <div class="sec-label">04 · QUALITY GATES (NON-NEGOTIABLE)</div>
+      <div class="line"><span class="kw">✦</span> Every chart must have a <span class="directive">title, subtitle, and axis labels</span>. No orphan charts.</div>
+      <div class="line"><span class="kw">✦</span> Include a <span class="directive">header bar</span> with: dashboard title, last updated timestamp, export-to-CSV button, and a live data summary sentence.</div>
+      <div class="line"><span class="kw">✦</span> Include a <span class="directive">data table section</span> at the bottom with sortable columns, pagination (10 rows/page), and a search input.</div>
+      <div class="line"><span class="kw">✦</span> All JS must be <span class="val">vanilla + Chart.js only</span>. No React, no Vue, no jQuery. Chart.js version <span class="str">4.x</span> from cdnjs.</div>
+      <span class="line"><span class="kw">✦</span> Add a <span class="directive">loading skeleton</span> that displays for 600ms before charts animate in with a staggered <span class="val">200ms delay</span> per chart.</span>
+      <div class="line"><span class="kw">✦</span> All data must be parsed from a <span class="directive">single JS data constant</span> at the top of the file — never scatter raw values inside chart configs.</div>
+      <div class="line"><span class="kw">✦</span> The output must be a <span class="em">single .html file under 500KB</span> that opens in any browser with zero dependencies beyond CDN links.</div>
+    </div>
+
+    <div class="section">
+      <div class="sec-label">05 · ANTI-PATTERNS TO AVOID</div>
+      <div class="line"><span class="cmt">// These are grounds for automatic rejection. Never do the following:</span></div>
+      <div class="line"><span class="kw">✗</span> Default Chart.js gray palette — always apply a custom color scheme</div>
+      <div class="line"><span class="kw">✗</span> Pie charts with more than 5 slices — use a horizontal bar instead</div>
+      <div class="line"><span class="kw">✗</span> Missing zero-baseline on bar charts — always start Y-axis at 0</div>
+      <div class="line"><span class="kw">✗</span> Cluttered legends — use direct labeling on charts where possible</div>
+      <div class="line"><span class="kw">✗</span> Raw column header names as chart titles — always write human-readable titles</div>
+      <div class="line"><span class="kw">✗</span> White backgrounds — the entire dashboard is dark theme, no exceptions</div>
+      <div class="line"><span class="kw">✗</span> Alert boxes or console.log for errors — handle all edge cases silently in UI</div>
+    </div>
+
+    <div class="section">
+      <div class="sec-label">06 · OUTPUT FORMAT</div>
+      <div class="line"><span class="kw">DELIVER:</span></div>
+      <div class="line" style="padding-left:16px"><span class="str">1.</span> A <span class="val">2–3 sentence data narrative</span> summarizing what the dataset reveals</div>
+      <div class="line" style="padding-left:16px"><span class="str">2.</span> A <span class="val">bullet list</span> of every KPI chosen and why</div>
+      <div class="line" style="padding-left:16px"><span class="str">3.</span> A <span class="val">chart selection rationale</span> table (Chart | Data Used | Why This Chart Type)</div>
+      <div class="line" style="padding-left:16px"><span class="str">4.</span> The <span class="em">complete, runnable HTML file</span> inside a single code block</div>
+      <div class="line" style="margin-top:10px"><span class="cmt">// If any column's purpose is ambiguous, state your assumption explicitly before proceeding. Do not ask clarifying questions — make the best professional judgment and document it.</span></div>
+    </div>
+
+  </div>
+  <div class="footer-bar">
+    <div style="display:flex;gap:20px">
+      <div class="stat">TOKENS <span>~640</span></div>
+      <div class="stat">TECHNIQUES <span>6</span></div>
+      <div class="stat">QUALITY GATES <span>7</span></div>
+    </div>
+    <button class="copy-btn" onclick="copyPrompt(this)">⌘ COPY FULL PROMPT</button>
+  </div>
+</div>
+
+<div id="full-prompt" style="display:none">You are a Principal Data Visualization Engineer and Senior UX Designer with 15+ years of experience building enterprise-grade analytical dashboards for Fortune 500 companies. You have deep expertise in data storytelling, KPI architecture, visual hierarchy, and information design principles. Your dashboards have been featured in Harvard Business Review and are used by C-suite executives worldwide.
+
+---
+
+TASK: Analyze the uploaded Excel dataset and build a production-grade interactive dashboard as a single self-contained HTML file.
+
+Think step by step — follow this reasoning chain before writing any code:
+
+STEP 1 → DATA AUDIT: Identify all columns, data types, date ranges, numeric ranges, null patterns, and outliers. State what story the data is trying to tell.
+
+STEP 2 → KPI EXTRACTION: Decide which 4–6 headline KPIs matter most to a decision-maker. Every KPI must have a value, trend indicator (▲▼), and delta vs prior period.
+
+STEP 3 → VISUAL SELECTION: For each insight, choose the optimal chart type (bar, line, donut, scatter, heatmap, funnel, etc.) with explicit reasoning. Never default to bar charts without justification.
+
+STEP 4 → LAYOUT ARCHITECTURE: Design a dashboard grid. Top row = KPI cards. Middle = primary charts (2-col). Bottom = supporting charts + data table. Use a sidebar for filters if applicable.
+
+STEP 5 → BUILD: Write the complete HTML/CSS/JS code. Embed all data as JS variables. Use Chart.js 4.x from cdnjs CDN.
+
+---
+
+HARD DESIGN CONSTRAINTS:
+
+COLOR SYSTEM: Use a professional dark theme. Background #0F1117, cards #1A1D2E, primary accent #6C63FF, secondary #00D4AA, danger #FF4757, warning #FFA502. All text must pass WCAG AA contrast.
+
+TYPOGRAPHY: Import Inter from Google Fonts. Headers 600 weight. KPI numbers 700 weight at 2rem+. Labels 400 weight at 12px. No system fonts.
+
+INTERACTIVITY REQUIRED: (a) Date range filter, (b) Category dropdown filter, (c) All charts must respond to filter changes with smooth 300ms transitions, (d) Hover tooltips on all charts with formatted values, (e) Click-to-highlight cross-chart filtering where logical.
+
+KPI CARDS: Each card must have: metric name · current value (formatted) · sparkline · % change badge (color-coded green/red) · comparison label (vs last period).
+
+RESPONSIVENESS: CSS Grid with minmax(). Must render cleanly at 1280px, 1440px, 1920px. Mobile graceful degradation.
+
+DATA FORMATTING: Numbers with locale commas, currency with symbols, percentages with 1 decimal, dates in human-readable format. Zero hardcoded display strings.
+
+---
+
+QUALITY GATES (NON-NEGOTIABLE):
+✦ Every chart must have a title, subtitle, and axis labels. No orphan charts.
+✦ Include a header bar with: dashboard title, last updated timestamp, export-to-CSV button, and a live data summary sentence.
+✦ Include a data table section at the bottom with sortable columns, pagination (10 rows/page), and a search input.
+✦ All JS must be vanilla + Chart.js only. No React, no Vue, no jQuery. Chart.js version 4.x from cdnjs.
+✦ Add a loading skeleton that displays for 600ms before charts animate in with a staggered 200ms delay per chart.
+✦ All data must be parsed from a single JS data constant at the top of the file — never scatter raw values inside chart configs.
+✦ The output must be a single .html file under 500KB that opens in any browser with zero dependencies beyond CDN links.
+
+---
+
+ANTI-PATTERNS TO AVOID:
+✗ Default Chart.js gray palette — always apply a custom color scheme
+✗ Pie charts with more than 5 slices — use a horizontal bar instead
+✗ Missing zero-baseline on bar charts — always start Y-axis at 0
+✗ Cluttered legends — use direct labeling on charts where possible
+✗ Raw column header names as chart titles — always write human-readable titles
+✗ White backgrounds — the entire dashboard is dark theme, no exceptions
+✗ Alert boxes or console.log for errors — handle all edge cases silently in UI
+
+---
+
+DELIVER IN THIS EXACT ORDER:
+1. A 2–3 sentence data narrative summarizing what the dataset reveals
+2. A bullet list of every KPI chosen and why
+3. A chart selection rationale table (Chart | Data Used | Why This Chart Type)
+4. The complete, runnable HTML file inside a single code block
+
+NOTE: If any column's purpose is ambiguous, state your assumption explicitly before proceeding. Do not ask clarifying questions — make the best professional judgment and document it.</div>
+
+<script>
+function copyPrompt(btn) {
+  const text = document.getElementById('full-prompt').textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = '✓ COPIED!';
+    btn.classList.add('copied');
+    setTimeout(() => {
+      btn.textContent = '⌘ COPY FULL PROMPT';
+      btn.classList.remove('copied');
+    }, 2500);
+  });
+}
+</script>
