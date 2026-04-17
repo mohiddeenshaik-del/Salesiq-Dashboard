@@ -1,15 +1,34 @@
-# 🚀 SalesIQ Dashboard
+# 🚀 SalesIQ Dashboard (AI-Generated)
 
-AI-generated interactive sales dashboard built in minutes.
+An interactive Sales Intelligence Dashboard built in minutes using AI.
 
 ## 🔗 Live Demo
-https://github.com/mohiddeenshaik-del/Salesiq-Dashboard/blob/main/index.html
+https://mohiddeenshaik-del.github.io/Salesiq-Dashboard/
 
 ## ⚡ Features
-- KPI Metrics
-- Interactive Filters
-- Charts (Bar, Donut, Scatter)
-- Product Insights
-- Export Functionality
+- KPI Metrics (Revenue, Profit, Orders, AOV)
+- Dynamic Filters (City, Category, Gender, Month)
+- Interactive Charts (Stacked, Donut, Scatter)
+- Product Performance Insights
+- Searchable + Paginated Data Table
+- CSV Export Functionality
 
-Built using AI (Claude) with zero manual coding.
+## 🧠 Built With
+- AI (Claude)
+- HTML, CSS, Chart.js (auto-generated)
+
+## 💡 Key Highlight
+Built without writing manual code — fully generated using AI.
+
+---
+
+## 📁 Dataset
+Based on sample e-commerce sales dataset.
+
+---
+
+## 📌 Why this matters
+This project demonstrates how AI can accelerate:
+- Data analytics
+- Dashboard creation
+- Business insights delivery
