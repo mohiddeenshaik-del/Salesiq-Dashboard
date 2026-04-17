@@ -2,8 +2,11 @@
 
 An interactive Sales Intelligence Dashboard built in minutes using AI.
 
-## 🔗 Live Demo
+👉 **Live Dashboard:**  
 https://mohiddeenshaik-del.github.io/Salesiq-Dashboard/
+
+👉 **View AI Prompt Used:**  
+https://mohiddeenshaik-del.github.io/Salesiq-Dashboard/prompt.html
 
 ## ⚡ Features
 - KPI Metrics (Revenue, Profit, Orders, AOV)
