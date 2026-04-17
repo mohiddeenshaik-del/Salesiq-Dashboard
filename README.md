@@ -3,7 +3,7 @@
 AI-generated interactive sales dashboard built in minutes.
 
 ## 🔗 Live Demo
-https://your-username.github.io/salesiq-dashboard/
+https://github.com/mohiddeenshaik-del/Salesiq-Dashboard/blob/main/index.html
 
 ## ⚡ Features
 - KPI Metrics
